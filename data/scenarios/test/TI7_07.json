@@ -1,0 +1,54 @@
+{
+  "id": "TI7_07",
+  "incident_type": "I7",
+  "seed": 3,
+  "params": {
+    "outage": {
+      "country": "France",
+      "channel": "Online",
+      "start": "2024-11-06",
+      "days": 2,
+      "drop": 0.77
+    },
+    "price": {
+      "category": "Servers",
+      "start": "2024-11-05",
+      "increase": 0.09,
+      "elasticity": -2.5,
+      "extra_segment": {}
+    }
+  },
+  "window_start": "2024-11-05",
+  "window_end": "2024-11-08",
+  "ground_truth": {
+    "classification": "business_change",
+    "causes": [
+      {
+        "segment": {
+          "country": "France",
+          "channel": "Online"
+        },
+        "mechanism": null
+      },
+      {
+        "segment": {
+          "product_category": "Servers"
+        },
+        "mechanism": "price"
+      }
+    ],
+    "require_all": true
+  },
+  "description": "Online outage in France + Servers price +9%",
+  "alert": {
+    "metric": "revenue",
+    "start": "2024-11-05",
+    "end": "2024-11-08",
+    "expected": 109918864.69,
+    "actual": 107201833.19,
+    "method": "same_weekday_4w_baseline",
+    "score": null,
+    "details": {},
+    "pct_deviation": -0.0247
+  }
+}

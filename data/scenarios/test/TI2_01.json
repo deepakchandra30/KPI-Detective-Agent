@@ -1,0 +1,38 @@
+{
+  "id": "TI2_01",
+  "incident_type": "I2",
+  "seed": 4,
+  "params": {
+    "category": "Laptops",
+    "start": "2024-05-07",
+    "increase": 0.13,
+    "elasticity": -2.6,
+    "extra_segment": {}
+  },
+  "window_start": "2024-05-07",
+  "window_end": "2024-05-11",
+  "ground_truth": {
+    "classification": "business_change",
+    "causes": [
+      {
+        "segment": {
+          "product_category": "Laptops"
+        },
+        "mechanism": "price"
+      }
+    ],
+    "require_all": false
+  },
+  "description": "Laptops price +13%, elasticity -2.6",
+  "alert": {
+    "metric": "revenue",
+    "start": "2024-05-07",
+    "end": "2024-05-11",
+    "expected": 121136295.3,
+    "actual": 107567426.61,
+    "method": "same_weekday_4w_baseline",
+    "score": null,
+    "details": {},
+    "pct_deviation": -0.112
+  }
+}

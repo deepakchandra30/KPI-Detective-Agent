@@ -1,0 +1,38 @@
+{
+  "id": "I2_05",
+  "incident_type": "I2",
+  "seed": 2,
+  "params": {
+    "category": "Monitors",
+    "start": "2025-06-10",
+    "increase": 0.15,
+    "elasticity": -3.0,
+    "extra_segment": {}
+  },
+  "window_start": "2025-06-10",
+  "window_end": "2025-06-14",
+  "ground_truth": {
+    "classification": "business_change",
+    "causes": [
+      {
+        "segment": {
+          "product_category": "Monitors"
+        },
+        "mechanism": "price"
+      }
+    ],
+    "require_all": false
+  },
+  "description": "Monitors price +15%, elasticity -3.0",
+  "alert": {
+    "metric": "revenue",
+    "start": "2025-06-10",
+    "end": "2025-06-14",
+    "expected": 129728363.31,
+    "actual": 125953187.13,
+    "method": "same_weekday_4w_baseline",
+    "score": null,
+    "details": {},
+    "pct_deviation": -0.0291
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "id": "TI3_07",
+  "incident_type": "I3",
+  "seed": 5,
+  "params": {
+    "channel": "Retail Partner",
+    "start": "2024-06-11",
+    "days": 3,
+    "mode": "zero",
+    "extra_segment": {}
+  },
+  "window_start": "2024-06-11",
+  "window_end": "2024-06-13",
+  "ground_truth": {
+    "classification": "data_quality",
+    "causes": [
+      {
+        "segment": {
+          "channel": "Retail Partner"
+        },
+        "mechanism": "data_quality"
+      }
+    ],
+    "require_all": false
+  },
+  "description": "Retail Partner revenue recorded as zero for 3d",
+  "alert": {
+    "metric": "revenue",
+    "start": "2024-06-11",
+    "end": "2024-06-13",
+    "expected": 80041382.91,
+    "actual": 63568159.98,
+    "method": "same_weekday_4w_baseline",
+    "score": null,
+    "details": {},
+    "pct_deviation": -0.2058
+  }
+}

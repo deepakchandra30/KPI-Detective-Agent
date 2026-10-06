@@ -1,0 +1,39 @@
+{
+  "id": "TI5_01",
+  "incident_type": "I5",
+  "seed": 4,
+  "params": {
+    "region": "NA",
+    "category": "Monitors",
+    "start": "2024-05-28",
+    "days": 10,
+    "final_drop": 0.82
+  },
+  "window_start": "2024-06-02",
+  "window_end": "2024-06-06",
+  "ground_truth": {
+    "classification": "business_change",
+    "causes": [
+      {
+        "segment": {
+          "region": "NA",
+          "product_category": "Monitors"
+        },
+        "mechanism": null
+      }
+    ],
+    "require_all": false
+  },
+  "description": "Monitors in NA decline gradually to -82% over 10d",
+  "alert": {
+    "metric": "revenue",
+    "start": "2024-06-02",
+    "end": "2024-06-06",
+    "expected": 122117906.39,
+    "actual": 117200137.74,
+    "method": "same_weekday_4w_baseline",
+    "score": null,
+    "details": {},
+    "pct_deviation": -0.0403
+  }
+}

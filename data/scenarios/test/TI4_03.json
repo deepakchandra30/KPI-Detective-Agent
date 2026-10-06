@@ -1,0 +1,36 @@
+{
+  "id": "TI4_03",
+  "incident_type": "I4",
+  "seed": 5,
+  "params": {
+    "start": "2024-05-07",
+    "days": 7,
+    "shift": 0.4
+  },
+  "window_start": "2024-05-07",
+  "window_end": "2024-05-13",
+  "ground_truth": {
+    "classification": "business_change",
+    "causes": [
+      {
+        "segment": {
+          "customer_segment": "Enterprise"
+        },
+        "mechanism": "mix"
+      }
+    ],
+    "require_all": false
+  },
+  "description": "40% of Enterprise units shift to Consumer for 7d",
+  "alert": {
+    "metric": "revenue",
+    "start": "2024-05-07",
+    "end": "2024-05-13",
+    "expected": 164392145.02,
+    "actual": 157436252.74,
+    "method": "same_weekday_4w_baseline",
+    "score": null,
+    "details": {},
+    "pct_deviation": -0.0423
+  }
+}

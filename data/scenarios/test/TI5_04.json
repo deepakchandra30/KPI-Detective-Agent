@@ -1,0 +1,39 @@
+{
+  "id": "TI5_04",
+  "incident_type": "I5",
+  "seed": 4,
+  "params": {
+    "region": "EMEA",
+    "category": "Monitors",
+    "start": "2024-03-05",
+    "days": 10,
+    "final_drop": 0.87
+  },
+  "window_start": "2024-03-10",
+  "window_end": "2024-03-14",
+  "ground_truth": {
+    "classification": "business_change",
+    "causes": [
+      {
+        "segment": {
+          "region": "EMEA",
+          "product_category": "Monitors"
+        },
+        "mechanism": null
+      }
+    ],
+    "require_all": false
+  },
+  "description": "Monitors in EMEA decline gradually to -87% over 10d",
+  "alert": {
+    "metric": "revenue",
+    "start": "2024-03-10",
+    "end": "2024-03-14",
+    "expected": 120520262.15,
+    "actual": 115623150.03,
+    "method": "same_weekday_4w_baseline",
+    "score": null,
+    "details": {},
+    "pct_deviation": -0.0406
+  }
+}

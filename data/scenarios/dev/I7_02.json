@@ -1,0 +1,54 @@
+{
+  "id": "I7_02",
+  "incident_type": "I7",
+  "seed": 1,
+  "params": {
+    "outage": {
+      "country": "US",
+      "channel": "Online",
+      "start": "2025-10-30",
+      "days": 2,
+      "drop": 0.7
+    },
+    "price": {
+      "category": "Laptops",
+      "start": "2025-10-29",
+      "increase": 0.08,
+      "elasticity": -2.5,
+      "extra_segment": {}
+    }
+  },
+  "window_start": "2025-10-29",
+  "window_end": "2025-11-01",
+  "ground_truth": {
+    "classification": "business_change",
+    "causes": [
+      {
+        "segment": {
+          "country": "US",
+          "channel": "Online"
+        },
+        "mechanism": null
+      },
+      {
+        "segment": {
+          "product_category": "Laptops"
+        },
+        "mechanism": "price"
+      }
+    ],
+    "require_all": true
+  },
+  "description": "Online outage in US + Laptops price +8%",
+  "alert": {
+    "metric": "revenue",
+    "start": "2025-10-29",
+    "end": "2025-11-01",
+    "expected": 102662181.38,
+    "actual": 92914311.82,
+    "method": "same_weekday_4w_baseline",
+    "score": null,
+    "details": {},
+    "pct_deviation": -0.095
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "id": "TI3_04",
+  "incident_type": "I3",
+  "seed": 5,
+  "params": {
+    "channel": "Retail Partner",
+    "start": "2025-11-06",
+    "days": 2,
+    "mode": "null",
+    "extra_segment": {}
+  },
+  "window_start": "2025-11-06",
+  "window_end": "2025-11-07",
+  "ground_truth": {
+    "classification": "data_quality",
+    "causes": [
+      {
+        "segment": {
+          "channel": "Retail Partner"
+        },
+        "mechanism": "data_quality"
+      }
+    ],
+    "require_all": false
+  },
+  "description": "Retail Partner revenue recorded as null for 2d",
+  "alert": {
+    "metric": "revenue",
+    "start": "2025-11-06",
+    "end": "2025-11-07",
+    "expected": 57942330.48,
+    "actual": 46295130.35,
+    "method": "same_weekday_4w_baseline",
+    "score": null,
+    "details": {},
+    "pct_deviation": -0.201
+  }
+}

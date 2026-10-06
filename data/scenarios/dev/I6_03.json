@@ -1,0 +1,34 @@
+{
+  "id": "I6_03",
+  "incident_type": "I6",
+  "seed": 1,
+  "params": {
+    "missing_share": [
+      0.7
+    ]
+  },
+  "window_start": "2025-06-06",
+  "window_end": "2025-06-06",
+  "ground_truth": {
+    "classification": "data_quality",
+    "causes": [
+      {
+        "segment": {},
+        "mechanism": "data_quality"
+      }
+    ],
+    "require_all": false
+  },
+  "description": "Latest load missing 70% of rows",
+  "alert": {
+    "metric": "revenue",
+    "start": "2025-06-06",
+    "end": "2025-06-06",
+    "expected": 27644737.92,
+    "actual": 7206462.67,
+    "method": "same_weekday_4w_baseline",
+    "score": null,
+    "details": {},
+    "pct_deviation": -0.7393
+  }
+}

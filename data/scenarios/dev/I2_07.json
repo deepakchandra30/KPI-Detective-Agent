@@ -1,0 +1,41 @@
+{
+  "id": "I2_07",
+  "incident_type": "I2",
+  "seed": 1,
+  "params": {
+    "category": "Laptops",
+    "start": "2025-11-04",
+    "increase": 0.1,
+    "elasticity": -2.5,
+    "extra_segment": {
+      "region": "NA"
+    }
+  },
+  "window_start": "2025-11-04",
+  "window_end": "2025-11-08",
+  "ground_truth": {
+    "classification": "business_change",
+    "causes": [
+      {
+        "segment": {
+          "product_category": "Laptops",
+          "region": "NA"
+        },
+        "mechanism": "price"
+      }
+    ],
+    "require_all": false
+  },
+  "description": "Laptops price +10% in NA, elasticity -2.5",
+  "alert": {
+    "metric": "revenue",
+    "start": "2025-11-04",
+    "end": "2025-11-08",
+    "expected": 132245248.71,
+    "actual": 123852110.33,
+    "method": "same_weekday_4w_baseline",
+    "score": null,
+    "details": {},
+    "pct_deviation": -0.0635
+  }
+}

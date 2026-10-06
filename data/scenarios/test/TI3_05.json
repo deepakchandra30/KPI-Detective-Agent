@@ -1,0 +1,38 @@
+{
+  "id": "TI3_05",
+  "incident_type": "I3",
+  "seed": 3,
+  "params": {
+    "channel": "Online",
+    "start": "2024-05-07",
+    "days": 3,
+    "mode": "null",
+    "extra_segment": {}
+  },
+  "window_start": "2024-05-07",
+  "window_end": "2024-05-09",
+  "ground_truth": {
+    "classification": "data_quality",
+    "causes": [
+      {
+        "segment": {
+          "channel": "Online"
+        },
+        "mechanism": "data_quality"
+      }
+    ],
+    "require_all": false
+  },
+  "description": "Online revenue recorded as null for 3d",
+  "alert": {
+    "metric": "revenue",
+    "start": "2024-05-07",
+    "end": "2024-05-09",
+    "expected": 79252067.41,
+    "actual": 55487324.46,
+    "method": "same_weekday_4w_baseline",
+    "score": null,
+    "details": {},
+    "pct_deviation": -0.2999
+  }
+}

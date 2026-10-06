@@ -1,0 +1,54 @@
+{
+  "id": "I7_06",
+  "incident_type": "I7",
+  "seed": 2,
+  "params": {
+    "outage": {
+      "country": "France",
+      "channel": "Online",
+      "start": "2024-06-05",
+      "days": 2,
+      "drop": 0.7
+    },
+    "price": {
+      "category": "Laptops",
+      "start": "2024-06-04",
+      "increase": 0.1,
+      "elasticity": -2.5,
+      "extra_segment": {}
+    }
+  },
+  "window_start": "2024-06-04",
+  "window_end": "2024-06-07",
+  "ground_truth": {
+    "classification": "business_change",
+    "causes": [
+      {
+        "segment": {
+          "country": "France",
+          "channel": "Online"
+        },
+        "mechanism": null
+      },
+      {
+        "segment": {
+          "product_category": "Laptops"
+        },
+        "mechanism": "price"
+      }
+    ],
+    "require_all": true
+  },
+  "description": "Online outage in France + Laptops price +10%",
+  "alert": {
+    "metric": "revenue",
+    "start": "2024-06-04",
+    "end": "2024-06-07",
+    "expected": 107861525.63,
+    "actual": 98141632.05,
+    "method": "same_weekday_4w_baseline",
+    "score": null,
+    "details": {},
+    "pct_deviation": -0.0901
+  }
+}

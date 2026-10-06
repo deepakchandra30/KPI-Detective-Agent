@@ -1,0 +1,41 @@
+{
+  "id": "I3_05",
+  "incident_type": "I3",
+  "seed": 0,
+  "params": {
+    "channel": "Online",
+    "start": "2024-05-14",
+    "days": 2,
+    "mode": "zero",
+    "extra_segment": {
+      "region": "EMEA"
+    }
+  },
+  "window_start": "2024-05-14",
+  "window_end": "2024-05-15",
+  "ground_truth": {
+    "classification": "data_quality",
+    "causes": [
+      {
+        "segment": {
+          "channel": "Online",
+          "region": "EMEA"
+        },
+        "mechanism": "data_quality"
+      }
+    ],
+    "require_all": false
+  },
+  "description": "Online in EMEA revenue recorded as zero for 2d",
+  "alert": {
+    "metric": "revenue",
+    "start": "2024-05-14",
+    "end": "2024-05-15",
+    "expected": 53310836.07,
+    "actual": 47914022.63,
+    "method": "same_weekday_4w_baseline",
+    "score": null,
+    "details": {},
+    "pct_deviation": -0.1012
+  }
+}

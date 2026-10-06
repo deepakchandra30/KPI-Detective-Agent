@@ -1,0 +1,38 @@
+{
+  "id": "I3_01",
+  "incident_type": "I3",
+  "seed": 2,
+  "params": {
+    "channel": "Online",
+    "start": "2025-06-03",
+    "days": 2,
+    "mode": "zero",
+    "extra_segment": {}
+  },
+  "window_start": "2025-06-03",
+  "window_end": "2025-06-04",
+  "ground_truth": {
+    "classification": "data_quality",
+    "causes": [
+      {
+        "segment": {
+          "channel": "Online"
+        },
+        "mechanism": "data_quality"
+      }
+    ],
+    "require_all": false
+  },
+  "description": "Online revenue recorded as zero for 2d",
+  "alert": {
+    "metric": "revenue",
+    "start": "2025-06-03",
+    "end": "2025-06-04",
+    "expected": 56982269.4,
+    "actual": 38923165.22,
+    "method": "same_weekday_4w_baseline",
+    "score": null,
+    "details": {},
+    "pct_deviation": -0.3169
+  }
+}

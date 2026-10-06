@@ -1,0 +1,39 @@
+{
+  "id": "TI1_07",
+  "incident_type": "I1",
+  "seed": 3,
+  "params": {
+    "country": "Germany",
+    "channel": "Online",
+    "start": "2025-11-06",
+    "days": 2,
+    "drop": 0.8
+  },
+  "window_start": "2025-11-06",
+  "window_end": "2025-11-07",
+  "ground_truth": {
+    "classification": "business_change",
+    "causes": [
+      {
+        "segment": {
+          "country": "Germany",
+          "channel": "Online"
+        },
+        "mechanism": null
+      }
+    ],
+    "require_all": false
+  },
+  "description": "Online outage in Germany, -80% for 2d",
+  "alert": {
+    "metric": "revenue",
+    "start": "2025-11-06",
+    "end": "2025-11-07",
+    "expected": 57869544.95,
+    "actual": 55143541.35,
+    "method": "same_weekday_4w_baseline",
+    "score": null,
+    "details": {},
+    "pct_deviation": -0.0471
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "id": "TI3_01",
+  "incident_type": "I3",
+  "seed": 5,
+  "params": {
+    "channel": "Direct Sales",
+    "start": "2025-05-27",
+    "days": 1,
+    "mode": "zero",
+    "extra_segment": {}
+  },
+  "window_start": "2025-05-27",
+  "window_end": "2025-05-27",
+  "ground_truth": {
+    "classification": "data_quality",
+    "causes": [
+      {
+        "segment": {
+          "channel": "Direct Sales"
+        },
+        "mechanism": "data_quality"
+      }
+    ],
+    "require_all": false
+  },
+  "description": "Direct Sales revenue recorded as zero for 1d",
+  "alert": {
+    "metric": "revenue",
+    "start": "2025-05-27",
+    "end": "2025-05-27",
+    "expected": 27528413.19,
+    "actual": 15079863.14,
+    "method": "same_weekday_4w_baseline",
+    "score": null,
+    "details": {},
+    "pct_deviation": -0.4522
+  }
+}

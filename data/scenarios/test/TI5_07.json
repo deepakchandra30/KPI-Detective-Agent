@@ -1,0 +1,39 @@
+{
+  "id": "TI5_07",
+  "incident_type": "I5",
+  "seed": 4,
+  "params": {
+    "region": "LATAM",
+    "category": "Monitors",
+    "start": "2025-02-25",
+    "days": 10,
+    "final_drop": 0.68
+  },
+  "window_start": "2025-03-02",
+  "window_end": "2025-03-06",
+  "ground_truth": {
+    "classification": "business_change",
+    "causes": [
+      {
+        "segment": {
+          "region": "LATAM",
+          "product_category": "Monitors"
+        },
+        "mechanism": null
+      }
+    ],
+    "require_all": false
+  },
+  "description": "Monitors in LATAM decline gradually to -68% over 10d",
+  "alert": {
+    "metric": "revenue",
+    "start": "2025-03-02",
+    "end": "2025-03-06",
+    "expected": 126806730.9,
+    "actual": 127302229.07,
+    "method": "same_weekday_4w_baseline",
+    "score": null,
+    "details": {},
+    "pct_deviation": 0.0039
+  }
+}

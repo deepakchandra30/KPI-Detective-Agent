@@ -1,0 +1,39 @@
+{
+  "id": "TI5_05",
+  "incident_type": "I5",
+  "seed": 5,
+  "params": {
+    "region": "LATAM",
+    "category": "Laptops",
+    "start": "2024-02-27",
+    "days": 10,
+    "final_drop": 0.65
+  },
+  "window_start": "2024-03-03",
+  "window_end": "2024-03-07",
+  "ground_truth": {
+    "classification": "business_change",
+    "causes": [
+      {
+        "segment": {
+          "region": "LATAM",
+          "product_category": "Laptops"
+        },
+        "mechanism": null
+      }
+    ],
+    "require_all": false
+  },
+  "description": "Laptops in LATAM decline gradually to -65% over 10d",
+  "alert": {
+    "metric": "revenue",
+    "start": "2024-03-03",
+    "end": "2024-03-07",
+    "expected": 120313040.13,
+    "actual": 118899525.65,
+    "method": "same_weekday_4w_baseline",
+    "score": null,
+    "details": {},
+    "pct_deviation": -0.0117
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "id": "TI8_11",
+  "incident_type": "I8",
+  "seed": 5,
+  "params": {},
+  "window_start": "2025-01-05",
+  "window_end": "2025-01-07",
+  "ground_truth": {
+    "classification": "expected_seasonal",
+    "causes": [],
+    "require_all": false
+  },
+  "description": "Normal seasonal dip, nothing injected",
+  "alert": {
+    "metric": "revenue",
+    "start": "2025-01-05",
+    "end": "2025-01-07",
+    "expected": 72792491.12,
+    "actual": 47967700.0,
+    "method": "same_weekday_4w_baseline",
+    "score": null,
+    "details": {},
+    "pct_deviation": -0.341
+  }
+}

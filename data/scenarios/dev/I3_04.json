@@ -1,0 +1,38 @@
+{
+  "id": "I3_04",
+  "incident_type": "I3",
+  "seed": 2,
+  "params": {
+    "channel": "Online",
+    "start": "2025-11-04",
+    "days": 2,
+    "mode": "null",
+    "extra_segment": {}
+  },
+  "window_start": "2025-11-04",
+  "window_end": "2025-11-05",
+  "ground_truth": {
+    "classification": "data_quality",
+    "causes": [
+      {
+        "segment": {
+          "channel": "Online"
+        },
+        "mechanism": "data_quality"
+      }
+    ],
+    "require_all": false
+  },
+  "description": "Online revenue recorded as null for 2d",
+  "alert": {
+    "metric": "revenue",
+    "start": "2025-11-04",
+    "end": "2025-11-05",
+    "expected": 57365175.55,
+    "actual": 40624595.11,
+    "method": "same_weekday_4w_baseline",
+    "score": null,
+    "details": {},
+    "pct_deviation": -0.2918
+  }
+}

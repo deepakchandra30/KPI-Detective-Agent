@@ -1,0 +1,38 @@
+{
+  "id": "TI2_02",
+  "incident_type": "I2",
+  "seed": 5,
+  "params": {
+    "category": "Servers",
+    "start": "2024-05-28",
+    "increase": 0.09,
+    "elasticity": -2.8,
+    "extra_segment": {}
+  },
+  "window_start": "2024-05-28",
+  "window_end": "2024-06-01",
+  "ground_truth": {
+    "classification": "business_change",
+    "causes": [
+      {
+        "segment": {
+          "product_category": "Servers"
+        },
+        "mechanism": "price"
+      }
+    ],
+    "require_all": false
+  },
+  "description": "Servers price +9%, elasticity -2.8",
+  "alert": {
+    "metric": "revenue",
+    "start": "2024-05-28",
+    "end": "2024-06-01",
+    "expected": 121551283.9,
+    "actual": 117425354.32,
+    "method": "same_weekday_4w_baseline",
+    "score": null,
+    "details": {},
+    "pct_deviation": -0.0339
+  }
+}

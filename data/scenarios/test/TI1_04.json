@@ -1,0 +1,39 @@
+{
+  "id": "TI1_04",
+  "incident_type": "I1",
+  "seed": 3,
+  "params": {
+    "country": "Australia",
+    "channel": "Online",
+    "start": "2025-05-27",
+    "days": 3,
+    "drop": 0.57
+  },
+  "window_start": "2025-05-27",
+  "window_end": "2025-05-29",
+  "ground_truth": {
+    "classification": "business_change",
+    "causes": [
+      {
+        "segment": {
+          "country": "Australia",
+          "channel": "Online"
+        },
+        "mechanism": null
+      }
+    ],
+    "require_all": false
+  },
+  "description": "Online outage in Australia, -57% for 3d",
+  "alert": {
+    "metric": "revenue",
+    "start": "2025-05-27",
+    "end": "2025-05-29",
+    "expected": 84997879.1,
+    "actual": 83141709.67,
+    "method": "same_weekday_4w_baseline",
+    "score": null,
+    "details": {},
+    "pct_deviation": -0.0218
+  }
+}

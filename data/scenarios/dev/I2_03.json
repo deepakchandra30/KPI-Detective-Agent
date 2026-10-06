@@ -1,0 +1,38 @@
+{
+  "id": "I2_03",
+  "incident_type": "I2",
+  "seed": 0,
+  "params": {
+    "category": "Servers",
+    "start": "2025-05-21",
+    "increase": 0.1,
+    "elasticity": -3.0,
+    "extra_segment": {}
+  },
+  "window_start": "2025-05-21",
+  "window_end": "2025-05-25",
+  "ground_truth": {
+    "classification": "business_change",
+    "causes": [
+      {
+        "segment": {
+          "product_category": "Servers"
+        },
+        "mechanism": "price"
+      }
+    ],
+    "require_all": false
+  },
+  "description": "Servers price +10%, elasticity -3.0",
+  "alert": {
+    "metric": "revenue",
+    "start": "2025-05-21",
+    "end": "2025-05-25",
+    "expected": 116930778.45,
+    "actual": 111507246.16,
+    "method": "same_weekday_4w_baseline",
+    "score": null,
+    "details": {},
+    "pct_deviation": -0.0464
+  }
+}

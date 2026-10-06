@@ -1,0 +1,41 @@
+{
+  "id": "I3_07",
+  "incident_type": "I3",
+  "seed": 2,
+  "params": {
+    "channel": "Retail Partner",
+    "start": "2024-06-04",
+    "days": 2,
+    "mode": "null",
+    "extra_segment": {
+      "region": "NA"
+    }
+  },
+  "window_start": "2024-06-04",
+  "window_end": "2024-06-05",
+  "ground_truth": {
+    "classification": "data_quality",
+    "causes": [
+      {
+        "segment": {
+          "channel": "Retail Partner",
+          "region": "NA"
+        },
+        "mechanism": "data_quality"
+      }
+    ],
+    "require_all": false
+  },
+  "description": "Retail Partner in NA revenue recorded as null for 2d",
+  "alert": {
+    "metric": "revenue",
+    "start": "2024-06-04",
+    "end": "2024-06-05",
+    "expected": 53589493.68,
+    "actual": 48503444.61,
+    "method": "same_weekday_4w_baseline",
+    "score": null,
+    "details": {},
+    "pct_deviation": -0.0949
+  }
+}

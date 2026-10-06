@@ -1,0 +1,36 @@
+{
+  "id": "TI4_07",
+  "incident_type": "I4",
+  "seed": 3,
+  "params": {
+    "start": "2024-03-05",
+    "days": 4,
+    "shift": 0.45
+  },
+  "window_start": "2024-03-05",
+  "window_end": "2024-03-08",
+  "ground_truth": {
+    "classification": "business_change",
+    "causes": [
+      {
+        "segment": {
+          "customer_segment": "Enterprise"
+        },
+        "mechanism": "mix"
+      }
+    ],
+    "require_all": false
+  },
+  "description": "45% of Enterprise units shift to Consumer for 4d",
+  "alert": {
+    "metric": "revenue",
+    "start": "2024-03-05",
+    "end": "2024-03-08",
+    "expected": 106200397.59,
+    "actual": 98435804.64,
+    "method": "same_weekday_4w_baseline",
+    "score": null,
+    "details": {},
+    "pct_deviation": -0.0731
+  }
+}

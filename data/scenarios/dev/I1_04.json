@@ -1,0 +1,39 @@
+{
+  "id": "I1_04",
+  "incident_type": "I1",
+  "seed": 0,
+  "params": {
+    "country": "US",
+    "channel": "Online",
+    "start": "2025-03-12",
+    "days": 2,
+    "drop": 0.4
+  },
+  "window_start": "2025-03-12",
+  "window_end": "2025-03-13",
+  "ground_truth": {
+    "classification": "business_change",
+    "causes": [
+      {
+        "segment": {
+          "country": "US",
+          "channel": "Online"
+        },
+        "mechanism": null
+      }
+    ],
+    "require_all": false
+  },
+  "description": "Online outage in US, -40% for 2d",
+  "alert": {
+    "metric": "revenue",
+    "start": "2025-03-12",
+    "end": "2025-03-13",
+    "expected": 56362440.29,
+    "actual": 52624825.56,
+    "method": "same_weekday_4w_baseline",
+    "score": null,
+    "details": {},
+    "pct_deviation": -0.0663
+  }
+}

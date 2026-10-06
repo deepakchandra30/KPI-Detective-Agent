@@ -1,0 +1,39 @@
+{
+  "id": "TI5_06",
+  "incident_type": "I5",
+  "seed": 3,
+  "params": {
+    "region": "APAC",
+    "category": "Monitors",
+    "start": "2025-03-03",
+    "days": 10,
+    "final_drop": 0.61
+  },
+  "window_start": "2025-03-08",
+  "window_end": "2025-03-12",
+  "ground_truth": {
+    "classification": "business_change",
+    "causes": [
+      {
+        "segment": {
+          "region": "APAC",
+          "product_category": "Monitors"
+        },
+        "mechanism": null
+      }
+    ],
+    "require_all": false
+  },
+  "description": "Monitors in APAC decline gradually to -61% over 10d",
+  "alert": {
+    "metric": "revenue",
+    "start": "2025-03-08",
+    "end": "2025-03-12",
+    "expected": 115733596.79,
+    "actual": 112363795.49,
+    "method": "same_weekday_4w_baseline",
+    "score": null,
+    "details": {},
+    "pct_deviation": -0.0291
+  }
+}

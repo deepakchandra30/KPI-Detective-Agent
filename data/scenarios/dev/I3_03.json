@@ -1,0 +1,38 @@
+{
+  "id": "I3_03",
+  "incident_type": "I3",
+  "seed": 1,
+  "params": {
+    "channel": "Direct Sales",
+    "start": "2025-10-29",
+    "days": 1,
+    "mode": "null",
+    "extra_segment": {}
+  },
+  "window_start": "2025-10-29",
+  "window_end": "2025-10-29",
+  "ground_truth": {
+    "classification": "data_quality",
+    "causes": [
+      {
+        "segment": {
+          "channel": "Direct Sales"
+        },
+        "mechanism": "data_quality"
+      }
+    ],
+    "require_all": false
+  },
+  "description": "Direct Sales revenue recorded as null for 1d",
+  "alert": {
+    "metric": "revenue",
+    "start": "2025-10-29",
+    "end": "2025-10-29",
+    "expected": 29138936.72,
+    "actual": 15700920.61,
+    "method": "same_weekday_4w_baseline",
+    "score": null,
+    "details": {},
+    "pct_deviation": -0.4612
+  }
+}

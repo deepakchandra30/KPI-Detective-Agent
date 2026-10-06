@@ -1,0 +1,25 @@
+{
+  "id": "I8_11",
+  "incident_type": "I8",
+  "seed": 2,
+  "params": {},
+  "window_start": "2024-10-01",
+  "window_end": "2024-10-03",
+  "ground_truth": {
+    "classification": "expected_seasonal",
+    "causes": [],
+    "require_all": false
+  },
+  "description": "Normal seasonal dip, nothing injected",
+  "alert": {
+    "metric": "revenue",
+    "start": "2024-10-01",
+    "end": "2024-10-03",
+    "expected": 90755195.67,
+    "actual": 80562233.96,
+    "method": "same_weekday_4w_baseline",
+    "score": null,
+    "details": {},
+    "pct_deviation": -0.1123
+  }
+}

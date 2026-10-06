@@ -1,0 +1,39 @@
+{
+  "id": "TI5_02",
+  "incident_type": "I5",
+  "seed": 5,
+  "params": {
+    "region": "EMEA",
+    "category": "Laptops",
+    "start": "2024-06-11",
+    "days": 10,
+    "final_drop": 0.77
+  },
+  "window_start": "2024-06-16",
+  "window_end": "2024-06-20",
+  "ground_truth": {
+    "classification": "business_change",
+    "causes": [
+      {
+        "segment": {
+          "region": "EMEA",
+          "product_category": "Laptops"
+        },
+        "mechanism": null
+      }
+    ],
+    "require_all": false
+  },
+  "description": "Laptops in EMEA decline gradually to -77% over 10d",
+  "alert": {
+    "metric": "revenue",
+    "start": "2024-06-16",
+    "end": "2024-06-20",
+    "expected": 121299213.14,
+    "actual": 107502678.09,
+    "method": "same_weekday_4w_baseline",
+    "score": null,
+    "details": {},
+    "pct_deviation": -0.1137
+  }
+}

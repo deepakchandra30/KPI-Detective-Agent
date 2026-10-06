@@ -1,0 +1,54 @@
+{
+  "id": "I7_05",
+  "incident_type": "I7",
+  "seed": 1,
+  "params": {
+    "outage": {
+      "country": "US",
+      "channel": "Online",
+      "start": "2024-10-31",
+      "days": 2,
+      "drop": 0.7
+    },
+    "price": {
+      "category": "Monitors",
+      "start": "2024-10-30",
+      "increase": 0.15,
+      "elasticity": -2.5,
+      "extra_segment": {}
+    }
+  },
+  "window_start": "2024-10-30",
+  "window_end": "2024-11-02",
+  "ground_truth": {
+    "classification": "business_change",
+    "causes": [
+      {
+        "segment": {
+          "country": "US",
+          "channel": "Online"
+        },
+        "mechanism": null
+      },
+      {
+        "segment": {
+          "product_category": "Monitors"
+        },
+        "mechanism": "price"
+      }
+    ],
+    "require_all": true
+  },
+  "description": "Online outage in US + Monitors price +15%",
+  "alert": {
+    "metric": "revenue",
+    "start": "2024-10-30",
+    "end": "2024-11-02",
+    "expected": 97185648.12,
+    "actual": 90376623.21,
+    "method": "same_weekday_4w_baseline",
+    "score": null,
+    "details": {},
+    "pct_deviation": -0.0701
+  }
+}

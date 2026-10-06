@@ -1,0 +1,54 @@
+{
+  "id": "I7_04",
+  "incident_type": "I7",
+  "seed": 0,
+  "params": {
+    "outage": {
+      "country": "Japan",
+      "channel": "Online",
+      "start": "2024-05-15",
+      "days": 2,
+      "drop": 0.7
+    },
+    "price": {
+      "category": "Laptops",
+      "start": "2024-05-14",
+      "increase": 0.12,
+      "elasticity": -2.5,
+      "extra_segment": {}
+    }
+  },
+  "window_start": "2024-05-14",
+  "window_end": "2024-05-17",
+  "ground_truth": {
+    "classification": "business_change",
+    "causes": [
+      {
+        "segment": {
+          "country": "Japan",
+          "channel": "Online"
+        },
+        "mechanism": null
+      },
+      {
+        "segment": {
+          "product_category": "Laptops"
+        },
+        "mechanism": "price"
+      }
+    ],
+    "require_all": true
+  },
+  "description": "Online outage in Japan + Laptops price +12%",
+  "alert": {
+    "metric": "revenue",
+    "start": "2024-05-14",
+    "end": "2024-05-17",
+    "expected": 106686252.29,
+    "actual": 95205031.81,
+    "method": "same_weekday_4w_baseline",
+    "score": null,
+    "details": {},
+    "pct_deviation": -0.1076
+  }
+}

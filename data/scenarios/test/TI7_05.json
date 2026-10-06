@@ -1,0 +1,54 @@
+{
+  "id": "TI7_05",
+  "incident_type": "I7",
+  "seed": 4,
+  "params": {
+    "outage": {
+      "country": "Japan",
+      "channel": "Online",
+      "start": "2024-05-29",
+      "days": 2,
+      "drop": 0.7
+    },
+    "price": {
+      "category": "Monitors",
+      "start": "2024-05-28",
+      "increase": 0.13,
+      "elasticity": -2.5,
+      "extra_segment": {}
+    }
+  },
+  "window_start": "2024-05-28",
+  "window_end": "2024-05-31",
+  "ground_truth": {
+    "classification": "business_change",
+    "causes": [
+      {
+        "segment": {
+          "country": "Japan",
+          "channel": "Online"
+        },
+        "mechanism": null
+      },
+      {
+        "segment": {
+          "product_category": "Monitors"
+        },
+        "mechanism": "price"
+      }
+    ],
+    "require_all": true
+  },
+  "description": "Online outage in Japan + Monitors price +13%",
+  "alert": {
+    "metric": "revenue",
+    "start": "2024-05-28",
+    "end": "2024-05-31",
+    "expected": 106710472.42,
+    "actual": 106531426.69,
+    "method": "same_weekday_4w_baseline",
+    "score": null,
+    "details": {},
+    "pct_deviation": -0.0017
+  }
+}

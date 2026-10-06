@@ -1,0 +1,39 @@
+{
+  "id": "TI1_06",
+  "incident_type": "I1",
+  "seed": 5,
+  "params": {
+    "country": "UK",
+    "channel": "Online",
+    "start": "2025-10-30",
+    "days": 3,
+    "drop": 0.87
+  },
+  "window_start": "2025-10-30",
+  "window_end": "2025-11-01",
+  "ground_truth": {
+    "classification": "business_change",
+    "causes": [
+      {
+        "segment": {
+          "country": "UK",
+          "channel": "Online"
+        },
+        "mechanism": null
+      }
+    ],
+    "require_all": false
+  },
+  "description": "Online outage in UK, -87% for 3d",
+  "alert": {
+    "metric": "revenue",
+    "start": "2025-10-30",
+    "end": "2025-11-01",
+    "expected": 73974636.59,
+    "actual": 72804420.03,
+    "method": "same_weekday_4w_baseline",
+    "score": null,
+    "details": {},
+    "pct_deviation": -0.0158
+  }
+}

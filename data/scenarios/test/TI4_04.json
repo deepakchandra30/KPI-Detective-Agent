@@ -1,0 +1,36 @@
+{
+  "id": "TI4_04",
+  "incident_type": "I4",
+  "seed": 3,
+  "params": {
+    "start": "2024-05-28",
+    "days": 5,
+    "shift": 0.28
+  },
+  "window_start": "2024-05-28",
+  "window_end": "2024-06-01",
+  "ground_truth": {
+    "classification": "business_change",
+    "causes": [
+      {
+        "segment": {
+          "customer_segment": "Enterprise"
+        },
+        "mechanism": "mix"
+      }
+    ],
+    "require_all": false
+  },
+  "description": "28% of Enterprise units shift to Consumer for 5d",
+  "alert": {
+    "metric": "revenue",
+    "start": "2024-05-28",
+    "end": "2024-06-01",
+    "expected": 122006296.47,
+    "actual": 120776237.51,
+    "method": "same_weekday_4w_baseline",
+    "score": null,
+    "details": {},
+    "pct_deviation": -0.0101
+  }
+}

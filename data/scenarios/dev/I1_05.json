@@ -1,0 +1,39 @@
+{
+  "id": "I1_05",
+  "incident_type": "I1",
+  "seed": 1,
+  "params": {
+    "country": "Japan",
+    "channel": "Online",
+    "start": "2025-05-13",
+    "days": 3,
+    "drop": 0.9
+  },
+  "window_start": "2025-05-13",
+  "window_end": "2025-05-15",
+  "ground_truth": {
+    "classification": "business_change",
+    "causes": [
+      {
+        "segment": {
+          "country": "Japan",
+          "channel": "Online"
+        },
+        "mechanism": null
+      }
+    ],
+    "require_all": false
+  },
+  "description": "Online outage in Japan, -90% for 3d",
+  "alert": {
+    "metric": "revenue",
+    "start": "2025-05-13",
+    "end": "2025-05-15",
+    "expected": 83972497.62,
+    "actual": 81623186.28,
+    "method": "same_weekday_4w_baseline",
+    "score": null,
+    "details": {},
+    "pct_deviation": -0.028
+  }
+}

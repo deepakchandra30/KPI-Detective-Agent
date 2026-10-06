@@ -1,0 +1,36 @@
+{
+  "id": "I4_05",
+  "incident_type": "I4",
+  "seed": 1,
+  "params": {
+    "start": "2024-02-20",
+    "days": 3,
+    "shift": 0.4
+  },
+  "window_start": "2024-02-20",
+  "window_end": "2024-02-22",
+  "ground_truth": {
+    "classification": "business_change",
+    "causes": [
+      {
+        "segment": {
+          "customer_segment": "Enterprise"
+        },
+        "mechanism": "mix"
+      }
+    ],
+    "require_all": false
+  },
+  "description": "40% of Enterprise units shift to Consumer for 3d",
+  "alert": {
+    "metric": "revenue",
+    "start": "2024-02-20",
+    "end": "2024-02-22",
+    "expected": 78875475.42,
+    "actual": 75268066.77,
+    "method": "same_weekday_4w_baseline",
+    "score": null,
+    "details": {},
+    "pct_deviation": -0.0457
+  }
+}

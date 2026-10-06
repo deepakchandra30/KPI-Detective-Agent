@@ -1,0 +1,54 @@
+{
+  "id": "TI7_06",
+  "incident_type": "I7",
+  "seed": 5,
+  "params": {
+    "outage": {
+      "country": "UK",
+      "channel": "Online",
+      "start": "2024-06-12",
+      "days": 2,
+      "drop": 0.68
+    },
+    "price": {
+      "category": "Servers",
+      "start": "2024-06-11",
+      "increase": 0.09,
+      "elasticity": -2.5,
+      "extra_segment": {}
+    }
+  },
+  "window_start": "2024-06-11",
+  "window_end": "2024-06-14",
+  "ground_truth": {
+    "classification": "business_change",
+    "causes": [
+      {
+        "segment": {
+          "country": "UK",
+          "channel": "Online"
+        },
+        "mechanism": null
+      },
+      {
+        "segment": {
+          "product_category": "Servers"
+        },
+        "mechanism": "price"
+      }
+    ],
+    "require_all": true
+  },
+  "description": "Online outage in UK + Servers price +9%",
+  "alert": {
+    "metric": "revenue",
+    "start": "2024-06-11",
+    "end": "2024-06-14",
+    "expected": 106520360.06,
+    "actual": 103828265.64,
+    "method": "same_weekday_4w_baseline",
+    "score": null,
+    "details": {},
+    "pct_deviation": -0.0253
+  }
+}

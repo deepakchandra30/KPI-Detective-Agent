@@ -1,0 +1,34 @@
+{
+  "id": "TI6_04",
+  "incident_type": "I6",
+  "seed": 5,
+  "params": {
+    "missing_share": [
+      0.54
+    ]
+  },
+  "window_start": "2025-06-19",
+  "window_end": "2025-06-19",
+  "ground_truth": {
+    "classification": "data_quality",
+    "causes": [
+      {
+        "segment": {},
+        "mechanism": "data_quality"
+      }
+    ],
+    "require_all": false
+  },
+  "description": "Latest load missing 54% of rows",
+  "alert": {
+    "metric": "revenue",
+    "start": "2025-06-19",
+    "end": "2025-06-19",
+    "expected": 28425307.08,
+    "actual": 12772130.02,
+    "method": "same_weekday_4w_baseline",
+    "score": null,
+    "details": {},
+    "pct_deviation": -0.5507
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "id": "TI1_01",
+  "incident_type": "I1",
+  "seed": 3,
+  "params": {
+    "country": "India",
+    "channel": "Online",
+    "start": "2025-02-25",
+    "days": 1,
+    "drop": 0.76
+  },
+  "window_start": "2025-02-25",
+  "window_end": "2025-02-25",
+  "ground_truth": {
+    "classification": "business_change",
+    "causes": [
+      {
+        "segment": {
+          "country": "India",
+          "channel": "Online"
+        },
+        "mechanism": null
+      }
+    ],
+    "require_all": false
+  },
+  "description": "Online outage in India, -76% for 1d",
+  "alert": {
+    "metric": "revenue",
+    "start": "2025-02-25",
+    "end": "2025-02-25",
+    "expected": 28174556.74,
+    "actual": 27327984.1,
+    "method": "same_weekday_4w_baseline",
+    "score": null,
+    "details": {},
+    "pct_deviation": -0.03
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "id": "I5_04",
+  "incident_type": "I5",
+  "seed": 1,
+  "params": {
+    "region": "APAC",
+    "category": "Laptops",
+    "start": "2025-05-13",
+    "days": 10,
+    "final_drop": 0.6
+  },
+  "window_start": "2025-05-18",
+  "window_end": "2025-05-22",
+  "ground_truth": {
+    "classification": "business_change",
+    "causes": [
+      {
+        "segment": {
+          "region": "APAC",
+          "product_category": "Laptops"
+        },
+        "mechanism": null
+      }
+    ],
+    "require_all": false
+  },
+  "description": "Laptops in APAC decline gradually to -60% over 10d",
+  "alert": {
+    "metric": "revenue",
+    "start": "2025-05-18",
+    "end": "2025-05-22",
+    "expected": 127360935.85,
+    "actual": 118476948.25,
+    "method": "same_weekday_4w_baseline",
+    "score": null,
+    "details": {},
+    "pct_deviation": -0.0698
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "id": "I1_07",
+  "incident_type": "I1",
+  "seed": 0,
+  "params": {
+    "country": "US",
+    "channel": "Online",
+    "start": "2025-06-03",
+    "days": 1,
+    "drop": 0.8
+  },
+  "window_start": "2025-06-03",
+  "window_end": "2025-06-03",
+  "ground_truth": {
+    "classification": "business_change",
+    "causes": [
+      {
+        "segment": {
+          "country": "US",
+          "channel": "Online"
+        },
+        "mechanism": null
+      }
+    ],
+    "require_all": false
+  },
+  "description": "Online outage in US, -80% for 1d",
+  "alert": {
+    "metric": "revenue",
+    "start": "2025-06-03",
+    "end": "2025-06-03",
+    "expected": 28173800.31,
+    "actual": 26215245.96,
+    "method": "same_weekday_4w_baseline",
+    "score": null,
+    "details": {},
+    "pct_deviation": -0.0695
+  }
+}

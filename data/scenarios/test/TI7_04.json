@@ -1,0 +1,54 @@
+{
+  "id": "TI7_04",
+  "incident_type": "I7",
+  "seed": 3,
+  "params": {
+    "outage": {
+      "country": "Germany",
+      "channel": "Online",
+      "start": "2024-05-08",
+      "days": 2,
+      "drop": 0.79
+    },
+    "price": {
+      "category": "Laptops",
+      "start": "2024-05-07",
+      "increase": 0.14,
+      "elasticity": -2.5,
+      "extra_segment": {}
+    }
+  },
+  "window_start": "2024-05-07",
+  "window_end": "2024-05-10",
+  "ground_truth": {
+    "classification": "business_change",
+    "causes": [
+      {
+        "segment": {
+          "country": "Germany",
+          "channel": "Online"
+        },
+        "mechanism": null
+      },
+      {
+        "segment": {
+          "product_category": "Laptops"
+        },
+        "mechanism": "price"
+      }
+    ],
+    "require_all": true
+  },
+  "description": "Online outage in Germany + Laptops price +14%",
+  "alert": {
+    "metric": "revenue",
+    "start": "2024-05-07",
+    "end": "2024-05-10",
+    "expected": 106033321.98,
+    "actual": 94339133.58,
+    "method": "same_weekday_4w_baseline",
+    "score": null,
+    "details": {},
+    "pct_deviation": -0.1103
+  }
+}

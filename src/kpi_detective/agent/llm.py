@@ -3,6 +3,7 @@
 * ``anthropic``: Claude via the Anthropic API (``ANTHROPIC_API_KEY``).
 * ``ollama``: any local model through Ollama's OpenAI-compatible endpoint,
   for cheap development and the cost comparison (PRD section 10).
+* ``gemini``: Google Gemini through its OpenAI-compatible endpoint (``GEMINI_API_KEY``).
 
 Both run at temperature 0 for reproducibility.
 """
@@ -98,15 +99,22 @@ class AnthropicClient:
 class OllamaClient:
     """OpenAI-compatible endpoint (Ollama by default)."""
 
-    def __init__(self, model: str | None = None, base_url: str | None = None, max_tokens: int = 2500):
+    def __init__(
+        self,
+        model: str | None = None,
+        base_url: str | None = None,
+        max_tokens: int = 2500,
+        api_key: str = "ollama",
+        usage: Usage | None = None,
+    ):
         from openai import OpenAI
 
         self.model = model or os.environ.get("KPI_LLM_MODEL", "qwen2.5:14b")
         self.max_tokens = max_tokens
         self._client = OpenAI(
-            base_url=base_url or os.environ.get("OLLAMA_BASE_URL", "http://localhost:11434/v1"), api_key="ollama"
+            base_url=base_url or os.environ.get("OLLAMA_BASE_URL", "http://localhost:11434/v1"), api_key=api_key
         )
-        self.usage = Usage(price_in=0.0, price_out=0.0)  # local: no API cost
+        self.usage = usage or Usage(price_in=0.0, price_out=0.0)  # local: no API cost
 
     def complete(self, system: str, user: str, node: str = "") -> str:
         t0 = time.perf_counter()
@@ -126,12 +134,33 @@ class OllamaClient:
         return resp.choices[0].message.content or ""
 
 
+GEMINI_BASE_URL = "https://generativelanguage.googleapis.com/v1beta/openai/"
+
+
+def gemini_client(
+    model: str | None = None, max_tokens: int = 2500, price_in: float | None = None, price_out: float | None = None
+) -> OllamaClient:
+    """Gemini through Google's OpenAI-compatible endpoint (``GEMINI_API_KEY``)."""
+    key = os.environ.get("GEMINI_API_KEY")
+    if not key:
+        raise LLMError("GEMINI_API_KEY is not set")
+    return OllamaClient(
+        model or os.environ.get("KPI_LLM_MODEL", "gemini-3.8-flash"),
+        base_url=GEMINI_BASE_URL,
+        max_tokens=max_tokens,
+        api_key=key,
+        usage=Usage(price_in=price_in, price_out=price_out),
+    )
+
+
 def make_client(provider: str, model: str | None = None, **kw) -> LLMClient:
     if provider == "anthropic":
         return AnthropicClient(model, **kw)
     if provider == "ollama":
         return OllamaClient(model)
-    raise ValueError(f"unknown provider {provider!r} (use anthropic or ollama)")
+    if provider == "gemini":
+        return gemini_client(model, **kw)
+    raise ValueError(f"unknown provider {provider!r} (use anthropic, ollama or gemini)")
 
 
 _FENCE = re.compile(r"```(?:json)?\s*(\{.*?\})\s*```", re.DOTALL)

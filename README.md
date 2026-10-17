@@ -170,6 +170,9 @@ kpi-detective benchmark --split test --provider anthropic \
     --systems rule_based,single_prompt,agent_no_critic,agent --repeats 3
 # local model, for development and the cost comparison
 kpi-detective benchmark --split test --provider ollama --model qwen2.5:14b --systems agent
+# Google Gemini through its OpenAI-compatible endpoint
+export GEMINI_API_KEY=...
+kpi-detective benchmark --split test --provider gemini --model gemini-3.8-flash --systems agent
 ```
 
 Other commands: `kpi-detective scenarios` rebuilds both splits; `kpi-detective detect --scenario TI2_03` runs both detectors; `python -m kpi_detective.evaluation.evaluate_detection --scenarios data/scenarios/test --out results/test` reruns the detection evaluation.

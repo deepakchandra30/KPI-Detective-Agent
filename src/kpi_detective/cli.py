@@ -119,7 +119,7 @@ def main() -> None:
 
     p = sub.add_parser("investigate", help="investigate a scenario's alert")
     p.add_argument("--scenario", required=True)
-    p.add_argument("--provider", choices=["anthropic", "ollama"])
+    p.add_argument("--provider", choices=["anthropic", "ollama", "gemini"])
     p.add_argument("--model")
     p.add_argument("--no-critic", action="store_true")
     p.add_argument("--trace", action="store_true")
@@ -128,7 +128,7 @@ def main() -> None:
     p = sub.add_parser("benchmark", help="run the benchmark on a split")
     p.add_argument("--split", choices=["dev", "test"], default="test")
     p.add_argument("--systems", default="rule_based,playbook,playbook_no_critic")
-    p.add_argument("--provider", choices=["anthropic", "ollama"])
+    p.add_argument("--provider", choices=["anthropic", "ollama", "gemini"])
     p.add_argument("--model")
     p.add_argument("--repeats", type=int, default=1)
     p.set_defaults(fn=cmd_benchmark)

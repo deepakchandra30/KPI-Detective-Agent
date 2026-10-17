@@ -157,7 +157,7 @@ def main(argv: list[str] | None = None) -> None:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--scenarios", default="data/scenarios")
     ap.add_argument("--systems", default=",".join(OFFLINE))
-    ap.add_argument("--provider", choices=["anthropic", "ollama"], default=None)
+    ap.add_argument("--provider", choices=["anthropic", "ollama", "gemini"], default=None)
     ap.add_argument("--model", default=None)
     ap.add_argument("--price-in", type=float, default=None, help="USD per 1M input tokens")
     ap.add_argument("--price-out", type=float, default=None, help="USD per 1M output tokens")
@@ -173,7 +173,9 @@ def main(argv: list[str] | None = None) -> None:
             ap.error(f"{[s for s in systems if s in ONLINE]} need --provider")
         from kpi_detective.agent.llm import make_client
 
-        kw = {"price_in": args.price_in, "price_out": args.price_out} if args.provider == "anthropic" else {}
+        kw = (
+            {"price_in": args.price_in, "price_out": args.price_out} if args.provider in ("anthropic", "gemini") else {}
+        )
         client = make_client(args.provider, args.model, **kw)
 
     scenarios = load_scenarios(args.scenarios)
